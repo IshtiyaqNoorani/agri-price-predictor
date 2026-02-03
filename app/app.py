@@ -46,7 +46,7 @@ st.set_page_config(
 # --------------------------------------------------
 # Header
 # --------------------------------------------------
-st.title("🌾 Agri Price Predictor")
+st.title(" Agri Price Predictor")
 st.subheader("Weekly Expected Mandi Prices")
 
 st.markdown(
@@ -65,7 +65,7 @@ st.markdown("---")
 # Sidebar — Inputs
 # --------------------------------------------------
 with st.sidebar:
-    st.header("🔧 Prediction Settings")
+    st.header(" Prediction Settings")
 
     commodity = st.selectbox(
         "Select Commodity",
@@ -92,13 +92,13 @@ with st.sidebar:
 # --------------------------------------------------
 # Prediction Section
 # --------------------------------------------------
-st.header("📊 Price Prediction")
+st.header(" Price Prediction")
 
-if st.button("🔍 Predict Weekly Price"):
+if st.button(" Predict Weekly Price"):
     model_file = MODEL_DIR / f"{commodity.replace(' ', '_').lower()}.pkl"
 
     if not model_file.exists():
-        st.error("❌ Prediction model not available for this commodity.")
+        st.error(" Prediction model not available for this commodity.")
     else:
         model = joblib.load(model_file)
 
@@ -123,7 +123,7 @@ if st.button("🔍 Predict Weekly Price"):
             max-width:650px;
             font-family: Arial, sans-serif;
         ">
-            <h3>✅ Weekly Expected Price</h3>
+            <h3> Weekly Expected Price</h3>
 
             <p><strong>Commodity:</strong> {commodity}</p>
             <p><strong>State:</strong> {state}</p>
